@@ -1,0 +1,194 @@
+1)write test case to check adding of negative numbers?
+
+package com.eg1;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.After;
+import org.junit.AfterClass;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.Assert;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+
+// @RunWith attaches a runner with the test class to initialize the test data
+@RunWith(MockitoJUnitRunner.class)
+public class FirstJUnitEg {
+
+	static ArithBusinessLogic obj;
+	static IArithService ias;
+
+	// execute before class
+	@BeforeClass
+	public static void beforeClass() {
+		System.out.println("in before class");
+
+		obj = new ArithBusinessLogic();
+		ias = mock(IArithService.class);
+
+		obj.setIAService(ias);
+	}
+
+	// execute after class
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("in after class");
+	}
+
+	// execute before test
+	@Before
+	public void before() {
+		System.out.println("in before");
+
+	}
+
+	// execute after test
+	@After
+	public void after() {
+		System.out.println("in after");
+	}
+
+	// test case
+	@Test
+	public void test1() {
+
+		// add the behavior to add numbers
+		when(ias.iadd(20, 10)).thenReturn(30);
+		// thenThrow()
+
+		Assert.assertEquals(obj.add(20, 10), 30);
+
+		System.out.println("in test1");
+
+	}
+
+	// test case
+	@Test
+	public void test2() {
+		// subtract the behavior to subtract numbers
+		when(ias.isub(-40, -10)).thenReturn(0);
+
+		Assert.assertEquals(obj.sub(-40, -10), 0);
+		System.out.println("in test2");
+	}
+
+	// test case ignore and will not execute
+	@Ignore
+	public void ignoreTest() {
+		System.out.println("in ignore test");
+	}
+
+
+b)Add maximum integer values and check it values
+// @RunWith attaches a runner with the test class to initialize the test data
+@RunWith(MockitoJUnitRunner.class)
+public class FirstJUnitEg {
+
+	static ArithBusinessLogic obj;
+	static IArithService ias;
+
+	// execute before class
+	@BeforeClass
+	public static void beforeClass() {
+		System.out.println("in before class");
+
+		obj = new ArithBusinessLogic();
+		ias = mock(IArithService.class);
+
+		obj.setIAService(ias);
+	}
+
+	// execute after class
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("in after class");
+	}
+
+	// execute before test
+	@Before
+	public void before() {
+		System.out.println("in before");
+
+	}
+
+	// execute after test
+	@After
+	public void after() {
+		System.out.println("in after");
+	}
+
+	// test case
+	@Test
+	public void test1() {
+
+		// add the behavior to add numbers
+		when(ias.iadd(20,20,40,50,70,80, 10)).thenReturn(290);
+		// thenThrow()
+
+		Assert.assertEquals(obj.add(20,20,40,50,70,80, 10), 290);
+
+		System.out.println("in test1");
+
+	}
+
+2)create a restcontroller which also use @value to read custom cofiguration property value from properties files?
+
+@restController
+@Configuration
+@ConfigurationProperties("cmdb")
+class CmdbProperties {
+ 
+
+    @value("college name")
+     string str1;
+
+    private String resourceUrl;
+    private List<Integer> resourcePort;
+ 
+    @Override
+    public String toString() {
+ 
+        return "resourceUrl: "+ this.resourceUrl+"\n"
+                + "resourcePort: "+this.resourcePort+"\n";
+    }
+    public String getResourceUrl() {
+        return resourceUrl;
+    }
+    public void setResourceUrl(String resourceUrl) {
+        this.resourceUrl = resourceUrl;
+    }
+    public List<Integer> getResourcePort() {
+        return resourcePort;
+    }
+    public void setResourcePort(List<Integer> resourcePort) {
+        this.resourcePort = resourcePort;
+    }
+}
+
+@SpringBootApplication
+public class MainApp_Value2
+{
+	  @PostConstruct
+	  public void print() {
+	    System.out.println("xxxxxxxxxxxxx:"+cmdbProperties.toString());
+	  }
+	  
+	    @Autowired
+	    private CmdbProperties cmdbProperties;
+	  
+    public static void main(String[] args)
+    {
+        ApplicationContext ctx = SpringApplication.run(MainApp_Value2.class, args);
+        
+    }
+}
+
+3) In spring cache perform neccesary changes in caching application,for conditional  caching
+ 

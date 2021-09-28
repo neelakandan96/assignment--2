@@ -1,0 +1,96 @@
+
+
+3)Create afterthrow in a logging aspect in this after throw print return values?
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+
+public class Employee {
+	private int id;
+	private String name;
+        private string address;
+	
+	public Employee()
+	{
+		
+	}
+	
+	public Employee(int id, String name,string address) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	
+	public int getId() {
+		System.out.println("in getId()");
+		
+		return id;
+	}
+	public void setId(int id) {
+		System.out.println("in setId()");
+
+		this.id = id;
+	}
+	public String getName() {
+		System.out.println("in getName()");
+		return name;
+	}
+	public void setName(String name) {
+		System.out.println("in setName()");
+
+		this.name = name;
+        }
+        ublic String getaddress() {
+		System.out.println("in getAddress()");
+		return address;
+	}
+	public void setaddress(String address) {
+		System.out.println("in setAddress()");
+
+		this.address = address;
+         }    
+		@AfterThrowing(value= "execution(* *.*(..))", throwing= "exception")
+		public void afterThrowingAdv(JoinPoint jp, Throwable exception) {
+			System.out.println("Inside afterThrowingAdv() advice= " + jp.getSignature().getName() + " method");
+                        System.out.println("Inside afterThrowingAdv() advice= " + jp.getSignature().getAddress() + " method");
+			System.out.println("Exception = " + exception);
+		}
+	}
+	
+}
+
+
+
+@Restcontroller//@component
+public class MyRestcontroller{
+        @Getmapping("/")
+      public String met() {
+          return "greatest";
+}
+}
+
+@component
+public class Mycomponent{
+     public string met(){
+              return "greatest"+new date();
+}
+}
+
+
+@Restcontroller
+public class Usercontroller {
+
+     @Autowired
+     private Iuserservice uservice;
+
+      @postMapping("/createuser")
+      public User met1(@RequestBody User user) {
+                  return uservice.CreateUser(user);
+     }
+       @GetMapping("/getusers")
+       public List<user>met2() {
+           return uservice.getAllusers();
+}
+}
+
+

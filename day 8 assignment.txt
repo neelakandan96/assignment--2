@@ -1,0 +1,213 @@
+
+
+1)Entity one to one with latitude and longitude make necessary change to create one to one relationship between adress and location?
+
+
+@Entity
+@Table(name="UserInfo")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class User {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+
+	@Column(name="country")
+	private String country;
+	@Column(name="name")
+	
+	private String name;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private Location location;
+
+	
+	public Address getAddress() {
+		return address;
+	}
+
+        
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+        public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+@Entity
+@Table(name="Address")
+public class Address {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+
+	@Column(name="street")
+	private String street;
+	
+	@Column(name="city")
+	private String city;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
+}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+}
+
+
+
+@Entity
+@Table(name="Location")
+public class Location {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+
+        @Column(name="dharmapuri")
+	private String dharmapuri;
+
+       public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+        
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+}
+
+
+
+2) In user spring boot rest api add update functionality?
+
+ @Entity
+@Table(name="UserInfo")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class User {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+        	@Column(name="country")
+	private String country;
+	@Column(name="name")
+	
+	private String name;
+    
+         @column(name="age")
+        private int age;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+	
+	@Service
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+        public String getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+}

@@ -1,0 +1,125 @@
+2)Use Configuration class(Annotation based), and use dynamic values to Employee Bean. Employee can have id, name(string), salary, address(string). Create two Employee beans with different data.
+
+
+
+class A{
+	A(){
+		System.out.println("A()");
+	}
+	
+	public void initBn(){
+		System.out.println("initBn()...");
+	}
+	
+	public void destroyBn(){
+		System.out.println("destroyBn()...");
+	}
+}
+
+@Configuration
+class Employee{
+	private String name;
+	private A oa;
+	private string Employee id;
+	private salary;
+	private address;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public string getEmployeeid() {
+		return Employeeid;
+	}
+	public void setEmployeeid(Employeeid) {
+		this.Employeeid = Employeeid;
+	}
+public  string getsalary() {
+	return salary;
+}
+public string setsalary(salary) {
+	this.salary = salary;
+	
+}
+
+public string getaddress() {
+	return address;
+}
+public string setaddress(address) {
+	this.address = address;
+	
+}
+	public Employee() {
+		System.out.println("Employee() ");
+	}
+}
+
+@Configuration
+class MyConfig{
+	@Bean 
+	@Scope("prototype")
+	public Employee getEBean(){
+		System.out.println("public Employee getEBean()");
+		return new Employee();
+	}	
+	
+        @Bean 
+	@Scope("prototype")
+	public Employeeid getEBean(){
+		System.out.println("public Employeeid getEBean()");
+		return new Employeeid();
+	}
+
+       @Bean 
+	@Scope("prototype")
+	public Employeename getEBean(){
+		System.out.println("public Employeename getEBean()");
+		return new Employeename();
+	}
+
+        @Bean 
+	@Scope("prototype")
+	public Employeesalary getEBean(){
+		System.out.println("public Employeesalary getEBean()");
+		return new Employeesalary();
+	}	
+
+	 @Bean 
+	@Scope("prototype")
+	public Employeeaddress getEBean(){
+		System.out.println("public Employeesalary getEBean()");
+		return new Employeesaddress();
+	}	
+	
+	@Bean 
+	@Scope("prototype")
+	public A getA(){
+		return new A();
+	}
+}
+
+public class SpringBeaanAnno {
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MyConfig.class);
+
+		//ctx.register(MyConfig.class);
+		//ctx.refresh();
+		
+                
+
+               
+		Employee emp = ctx.getBean(Employee.class);
+		emp.setName("jhgcgn");
+		
+		System.out.println(emp.getName());
+		
+		A oa = ctx.getBean(A.class);
+		System.out.println(oa);
+
+
+              
+	}
+}

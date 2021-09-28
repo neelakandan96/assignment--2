@@ -1,0 +1,80 @@
+
+
+
+1)What is Functional and Non Functional requirement difference?
+
+FUNCTIONAL REQUIREMENTS
+
+Functional reqiurements define a function that a system or system element must be qualified to perform and must be documented in forms.Functional requirements
+ its written in simple language For example authentication,business rules,audtit tracking etc.
+Functional requirements are mandatory.They are easy to define,it helps to verify software's functionality.These requirements are important to system operation.
+Examples of functional requirements are Authentication of a user on trying to log in to the system.
+
+NON-FUNCTIONAL REQUIREMENTS
+
+It is not related to the softaware's functional aspect.It specify the criteria it to used some behaviour of the system.Basic non functional requirements are 
+usability,reliability,security,storage,cost,flexibilty etc.It help to understand the system's perfomance.Non functional requirements are not mandatory.They 
+are hard to define,it helps to verify software's perfomance.These are not always the important requirements,they may be desirable.Examples of the non functional 
+requirements are the background color of the screens should be light blue.
+
+2)List differnte types of Testing brief each testing?
+
+1.Accessibilty Testing
+It is the practice of ensuring mobile and web apps and usable for user without disabilties and physics or cognitive conditions.
+
+2.Acceptance Testing
+Acceptance testing ensures that the end user(customer)can achieve goals set in the business requirements.It is also Known as user acceptance testing (UAT).
+
+3.Black Box Testing
+It is involves testing against a system where the code and paths are invisble.
+
+4.End to End Testing
+It is technique that tests the application's workflow from beginning to end to make sure everything functions as expected.
+
+5.Functional Testing
+It checks application website,or system to ensure it's doing exactly what's supposed to be doing.
+
+6.Interactive Testing
+It is manual testing interacting testing enables testers to create and failure manual tests for whose who do not use automobile and collect results from external tests.
+
+7.Integration Testing
+It is performed in an integrated hardware and software environment to ensure that the entire system functions properly.
+
+8.Load Testing
+This type of non-functional software testing process determines how the software application behaves while being accessed by multipe users simultaneosly.
+
+9.Non Functional Testing
+Non functional testing verfies the readiness of a system according to nonfunctional parameters(perfomance,accessibility,UX, etc)which are never addressed by functional
+tetsing.
+
+10.Perfomance Testing
+Perfomance tetsing examines the speed,stablilty,reliabilty,scalabilty,and resource usage of a software application under a specified workload.
+
+11.Regression Testing
+Regression testing is performed to determine if code modifications break an application or consume resources.
+
+12.Sanity Testing
+Performed after bugfixes,sanitytesting determines that the bug are fixed and that no further issues are introduced to these changes.
+
+13.Security Testing
+security testing unveils the vulnerabilities of the system to ensure that the software system and application are free from any threats or risks.These tests aim to find 
+any potential flaws and weakness in the software system that could lead to a loss of data revenue reputation per employees or outsides of a company.
+
+14.Single User Perfomance Testing
+Single user perfomance testing checks that the application under test performs fine according to specified threshold without any system load.This benchmark can be then used
+to define a relistic threshold when the system is under load.
+
+15.Smoke Testing
+This type of software testing validates the stability of a software application,it is performed on the initial software build to ensure that the critical functions of the program
+are working.
+
+16.Stress Testing
+Stress testing is a software testing activity that tests beyond normal operational capacity to test the results.
+
+17.Unit Testing
+Unit testing is the process of checking small pieces of code to ensure that the individual parts of a program work of properly on their own,speeding up testing strategies and 
+reducing wasted tests.
+
+18.White Box Testing
+White box testing involves testing the product's underlying structure,architecture,and code to validate input-output flow and enhance design,usabbility and security.
+
